@@ -1,15 +1,23 @@
 package com.technogise.chess;
 
 public class Cell {
-  private String row;
-  private String column;
+  private int row;
+  private char column;
 
-  public Cell(String row, String column) {
+  public Cell(int row, char column) {
     this.row = row;
     this.column = column;
   }
 
   public String getCellName() {
-    return row + column;
+    return String.valueOf(column) + String.valueOf(row);
+  }
+
+  public int getRow() {
+    return row;
+  }
+
+  public char getColumn() {
+    return column;
   }
 }
