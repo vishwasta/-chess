@@ -14,6 +14,12 @@ plugins {
     id 'application'
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
@@ -21,9 +27,6 @@ repositories {
 }
 
 dependencies {
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:27.1-jre'
-
     // Use JUnit Jupiter API for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
 
@@ -34,6 +37,10 @@ dependencies {
 application {
     // Define the main class for the application
     mainClassName = 'com.technogise.App'
+}
+
+run {
+    standardInput = System.in
 }
 
 test {
