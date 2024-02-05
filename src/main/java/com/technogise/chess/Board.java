@@ -13,4 +13,48 @@ public class Board {
         .toList())
       .toList();
   }
+
+  public List<List<Cell>> getCells() {
+    return cells;
+  }
+
+
+  public int getRowCount() {
+    return cells.size();
+  }
+
+  public int getColumnCount() {
+    return cells.get(0).size();
+  }
+
+  public int getColumn(Cell cell) {
+    return switch (cell.getColumn()) {
+      case 'A':
+        yield 0;
+      case 'B':
+        yield 1;
+      case 'C':
+        yield 2;
+      case 'D':
+        yield 3;
+      case 'E':
+        yield 4;
+      case 'F':
+        yield 5;
+      case 'G':
+        yield 6;
+      case 'H':
+        yield 7;
+      default:
+        throw new RuntimeException("Invalid value provided");
+    };
+  }
+
+  public int getRow(Cell cell) {
+    return cell.getRow() - 1;
+  }
+
+  public boolean isValidCell(int row, int column) {
+    return (column >= 0 && column <= getColumnCount() - 1) && (row >= 0 && row <= getRowCount() - 1);
+  }
 }
