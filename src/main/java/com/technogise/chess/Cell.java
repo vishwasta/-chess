@@ -1,8 +1,6 @@
 package com.technogise.chess;
 
-public class Cell {
-  private int row;
-  private char column;
+public record Cell(int row, char column) {
 
   public Cell(int row, char column) {
     this.row = row;
